@@ -1,4 +1,4 @@
-part of 'entity.dart';
+part of 'entities.dart';
 
 /// Data represention of `Quote` from a local
 /// json data file
