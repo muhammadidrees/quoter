@@ -7,6 +7,6 @@ abstract class QuoteRepository {
 class QuoteLocalRepository extends QuoteRepository {
   @override
   List<Quote> getQuotes() {
-    throw UnimplementedError();
+    return [];
   }
 }
