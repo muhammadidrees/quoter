@@ -1,14 +1,4 @@
-import 'dart:convert';
-import 'dart:io';
-
-import 'package:quoter/src/consts.dart';
-import 'package:quoter/src/enitities/entities.dart';
-
-import 'models/models.dart';
-
-abstract class QuoteRepository {
-  Future<List<Quote>> getQuotes();
-}
+part of 'repositories.dart';
 
 class QuoteLocalRepository extends QuoteRepository {
   final String filePath;

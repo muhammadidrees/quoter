@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:quoter/src/consts.dart';
-import 'package:quoter/src/quote_repository.dart';
+import 'package:quoter/src/repositories/repositories.dart';
 import 'package:quoter/src/models/models.dart';
 
 void main() {
