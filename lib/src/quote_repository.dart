@@ -6,7 +6,7 @@ import 'package:quoter/src/consts.dart';
 import 'models/models.dart';
 
 abstract class QuoteRepository {
-  List<Quote> getQuotes();
+  Future<List<Quote>> getQuotes();
 }
 
 class QuoteLocalRepository extends QuoteRepository {
@@ -17,7 +17,7 @@ class QuoteLocalRepository extends QuoteRepository {
   });
 
   @override
-  List<Quote> getQuotes() {
+  Future<List<Quote>> getQuotes() async {
     return [];
   }
 

@@ -11,6 +11,11 @@ void main() {
     {"quotation": "My name is Hamza", "quotee": "Muhammad Hamza"}
   ];
 
+  List<Quote> _testQuoteData = const [
+    Quote(quotation: "I am the Boss", quotee: "Muhammad Idrees"),
+    Quote(quotation: "My name is Hamza", quotee: "Muhammad Hamza"),
+  ];
+
   QuoteLocalRepository _quoteLocalRepository =
       QuoteLocalRepository(filePath: _testFilePath);
 
@@ -26,10 +31,10 @@ void main() {
       expect(quoteMapList, _testFileData);
     });
 
-    test("gets a list of Quotes on getQuotes", () {
-      List<Quote> quoteList = _quoteLocalRepository.getQuotes();
+    test("gets a list of Quotes on getQuotes", () async {
+      List<Quote> quoteList = await _quoteLocalRepository.getQuotes();
 
-      expect(quoteList, isA<List<Quote>>());
+      expect(quoteList, _testQuoteData);
     });
   });
 }
