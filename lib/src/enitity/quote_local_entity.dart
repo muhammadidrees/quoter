@@ -23,5 +23,10 @@ class QuoteLocalEntity extends Equatable {
       };
 
   @override
+  String toString() {
+    return "QuoteLocalEnitity: '$quotation' by $quotee";
+  }
+
+  @override
   List<Object?> get props => [quotation, quotee];
 }
