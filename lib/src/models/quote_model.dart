@@ -1,11 +1,11 @@
 part of 'models.dart';
 
 /// class representation of a `Quote`
-class Quoatation extends Equatable {
+class Quote extends Equatable {
   final String quotation;
   final String quotee;
 
-  const Quoatation({
+  const Quote({
     required this.quotation,
     required this.quotee,
   });
