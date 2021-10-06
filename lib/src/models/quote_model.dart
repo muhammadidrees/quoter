@@ -10,6 +10,11 @@ class Quote extends Equatable {
     required this.quotee,
   });
 
+  factory Quote.fromLocalEntitiy(QuoteLocalEntity entity) => Quote(
+        quotation: entity.quotation,
+        quotee: entity.quotee,
+      );
+
   @override
   List<Object?> get props => [quotation, quotee];
 }
