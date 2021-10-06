@@ -1,4 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:quoter/src/enitities/entity.dart';
+import '../enitities/entities.dart';
 
 part 'quote_model.dart';
