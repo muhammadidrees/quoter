@@ -2,11 +2,11 @@ part of 'entity.dart';
 
 /// Data represention of `Quote` from a local
 /// json data file
-class QuoteLocalEntity {
+class QuoteLocalEntity extends Equatable {
   final String quotation;
   final String quotee;
 
-  QuoteLocalEntity({
+  const QuoteLocalEntity({
     required this.quotation,
     required this.quotee,
   });
@@ -21,4 +21,7 @@ class QuoteLocalEntity {
         "quotation": quotation,
         "quotee": quotee,
       };
+
+  @override
+  List<Object?> get props => [quotation, quotee];
 }
