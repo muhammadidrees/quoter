@@ -12,7 +12,7 @@ void main() {
   Quoter quoter = Quoter(quoteRepository: MockQuoteLocalRepository());
 
   group("Quoter", () {
-    test("Uses 'QuoteLocalRepository' when not specified", () {
+    test("uses 'QuoteLocalRepository' when not specified", () {
       expect(const Quoter().quoteRepository, isA<QuoteLocalRepository>());
     });
   });
