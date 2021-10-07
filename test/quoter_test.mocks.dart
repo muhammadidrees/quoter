@@ -3,6 +3,7 @@
 // Do not manually edit this file.
 
 import 'dart:async' as _i3;
+import 'dart:math' as _i5;
 
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:quoter/src/models/models.dart' as _i4;
@@ -30,6 +31,30 @@ class MockQuoteRepository extends _i1.Mock implements _i2.QuoteRepository {
       (super.noSuchMethod(Invocation.method(#getQuotes, []),
               returnValue: Future<List<_i4.Quote>>.value(<_i4.Quote>[]))
           as _i3.Future<List<_i4.Quote>>);
+  @override
+  String toString() => super.toString();
+}
+
+/// A class which mocks [Random].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockRandom extends _i1.Mock implements _i5.Random {
+  MockRandom() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  int nextInt(int? max) =>
+      (super.noSuchMethod(Invocation.method(#nextInt, [max]), returnValue: 0)
+          as int);
+  @override
+  double nextDouble() =>
+      (super.noSuchMethod(Invocation.method(#nextDouble, []), returnValue: 0.0)
+          as double);
+  @override
+  bool nextBool() =>
+      (super.noSuchMethod(Invocation.method(#nextBool, []), returnValue: false)
+          as bool);
   @override
   String toString() => super.toString();
 }
