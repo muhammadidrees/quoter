@@ -20,7 +20,7 @@ void main() {
       expect(const Quoter().quoteRepository, isA<QuoteLocalRepository>());
     });
 
-    test("returns a list of quotes on getAllQuotes()", () async {
+    test("returns a list of quotes on get allQuotes", () async {
       Quoter quoter = Quoter(quoteRepository: _mockQuoteRepository);
 
       List<Quote> _quotes = await quoter.allQuotes;
