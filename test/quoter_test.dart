@@ -10,7 +10,7 @@ import 'resources/test_const.dart';
 
 @GenerateMocks([QuoteRepository])
 void main() {
-  Quoter quoter = Quoter(quoteRepository: MockQuoteRepository());
+  QuoteRepository _mockQuoteRepository = MockQuoteRepository();
 
   group("Quoter", () {
     test("uses 'QuoteLocalRepository' when not specified", () {
@@ -18,11 +18,14 @@ void main() {
     });
 
     test("returns a list of quotes on getAllQuotes()", () async {
-      when(quoter.getAllQuotes()).thenAnswer((_) async => ktestQuoteData);
+      when(_mockQuoteRepository.getQuotes())
+          .thenAnswer((_) async => ktestQuoteData);
+
+      Quoter quoter = Quoter(quoteRepository: _mockQuoteRepository);
 
       List<Quote> _quotes = await quoter.getAllQuotes();
 
-      expect(_quotes, []);
+      expect(_quotes, ktestQuoteData);
     });
   });
 }

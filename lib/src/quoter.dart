@@ -6,5 +6,5 @@ class Quoter {
 
   const Quoter({this.quoteRepository = const QuoteLocalRepository()});
 
-  Future<List<Quote>> getAllQuotes() async => [];
+  Future<List<Quote>> getAllQuotes() async => quoteRepository.getQuotes();
 }
