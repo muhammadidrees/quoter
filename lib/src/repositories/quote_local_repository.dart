@@ -16,6 +16,7 @@ class QuoteLocalRepository extends QuoteRepository {
         .toList();
   }
 
+  @visibleForTesting
   Future<List<Map<String, dynamic>>> get jsonData async {
     String _fileData = await File(filePath).readAsString();
 
