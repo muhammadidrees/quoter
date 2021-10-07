@@ -17,24 +17,14 @@ import 'package:quoter/src/repositories/repositories.dart' as _i2;
 // ignore_for_file: unnecessary_parenthesis
 // ignore_for_file: camel_case_types
 
-/// A class which mocks [QuoteLocalRepository].
+/// A class which mocks [QuoteRepository].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockQuoteLocalRepository extends _i1.Mock
-    implements _i2.QuoteLocalRepository {
-  MockQuoteLocalRepository() {
+class MockQuoteRepository extends _i1.Mock implements _i2.QuoteRepository {
+  MockQuoteRepository() {
     _i1.throwOnMissingStub(this);
   }
 
-  @override
-  String get filePath =>
-      (super.noSuchMethod(Invocation.getter(#filePath), returnValue: '')
-          as String);
-  @override
-  _i3.Future<List<Map<String, dynamic>>> get jsonData => (super.noSuchMethod(
-      Invocation.getter(#jsonData),
-      returnValue: Future<List<Map<String, dynamic>>>.value(
-          <Map<String, dynamic>>[])) as _i3.Future<List<Map<String, dynamic>>>);
   @override
   _i3.Future<List<_i4.Quote>> getQuotes() =>
       (super.noSuchMethod(Invocation.method(#getQuotes, []),
