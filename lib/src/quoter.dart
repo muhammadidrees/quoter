@@ -1,4 +1,4 @@
-import 'package:quoter/src/repositories/repositories.dart';
+import 'repositories/repositories.dart';
 
 class Quoter {
   final QuoteRepository quoteRepository;
