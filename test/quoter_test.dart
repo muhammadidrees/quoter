@@ -9,7 +9,7 @@ import 'quoter_test.mocks.dart';
 
 @GenerateMocks([QuoteLocalRepository])
 void main() {
-  Quoter quoter = const Quoter();
+  Quoter quoter = Quoter(quoteRepository: MockQuoteLocalRepository());
 
   group("Quoter", () {
     test("Uses 'QuoteLocalRepository' when not specified", () {
