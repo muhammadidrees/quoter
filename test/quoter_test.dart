@@ -4,7 +4,7 @@ import 'package:quoter/quoter.dart';
 import 'package:quoter/src/repositories/repositories.dart';
 
 void main() {
-  Quoter quoter = Quoter();
+  Quoter quoter = const Quoter();
 
   group("Quoter", () {
     test("Uses 'QuoteLocalRepository' when not specified", () {

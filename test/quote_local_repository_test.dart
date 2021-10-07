@@ -21,7 +21,7 @@ void main() {
 
   group("QuoteLocalRepository", () {
     test("user 'kquoteJsonFilePath' when not specified", () {
-      expect(QuoteLocalRepository().filePath, kquoteJsonFilePath);
+      expect(const QuoteLocalRepository().filePath, kquoteJsonFilePath);
     });
 
     test("converts json file to map list", () async {
