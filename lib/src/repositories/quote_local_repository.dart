@@ -3,7 +3,7 @@ part of 'repositories.dart';
 class QuoteLocalRepository extends QuoteRepository {
   final String filePath;
 
-  QuoteLocalRepository({
+  const QuoteLocalRepository({
     this.filePath = kquoteJsonFilePath,
   });
 
