@@ -13,14 +13,14 @@ void main() {
   QuoteRepository _mockQuoteRepository = MockQuoteRepository();
 
   group("Quoter", () {
+    when(_mockQuoteRepository.getQuotes())
+        .thenAnswer((_) async => ktestQuoteData);
+
     test("uses 'QuoteLocalRepository' when not specified", () {
       expect(const Quoter().quoteRepository, isA<QuoteLocalRepository>());
     });
 
     test("returns a list of quotes on getAllQuotes()", () async {
-      when(_mockQuoteRepository.getQuotes())
-          .thenAnswer((_) async => ktestQuoteData);
-
       Quoter quoter = Quoter(quoteRepository: _mockQuoteRepository);
 
       List<Quote> _quotes = await quoter.getAllQuotes();
