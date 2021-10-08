@@ -2,11 +2,10 @@
 // in quoter/test/quoter_test.dart.
 // Do not manually edit this file.
 
-import 'dart:async' as _i3;
-import 'dart:math' as _i5;
+import 'dart:math' as _i4;
 
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:quoter/src/models/models.dart' as _i4;
+import 'package:quoter/src/models/models.dart' as _i3;
 import 'package:quoter/src/repositories/repositories.dart' as _i2;
 
 // ignore_for_file: avoid_redundant_argument_values
@@ -27,10 +26,9 @@ class MockQuoteRepository extends _i1.Mock implements _i2.QuoteRepository {
   }
 
   @override
-  _i3.Future<List<_i4.Quote>> getQuotes() =>
+  List<_i3.Quote> getQuotes() =>
       (super.noSuchMethod(Invocation.method(#getQuotes, []),
-              returnValue: Future<List<_i4.Quote>>.value(<_i4.Quote>[]))
-          as _i3.Future<List<_i4.Quote>>);
+          returnValue: <_i3.Quote>[]) as List<_i3.Quote>);
   @override
   String toString() => super.toString();
 }
@@ -38,7 +36,7 @@ class MockQuoteRepository extends _i1.Mock implements _i2.QuoteRepository {
 /// A class which mocks [Random].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockRandom extends _i1.Mock implements _i5.Random {
+class MockRandom extends _i1.Mock implements _i4.Random {
   MockRandom() {
     _i1.throwOnMissingStub(this);
   }

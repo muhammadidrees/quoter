@@ -8,14 +8,12 @@ class Quoter {
 
   const Quoter({this.quoteRepository = const QuoteLocalRepository()});
 
-  Future<List<Quote>> get allQuotes async => quoteRepository.getQuotes();
+  List<Quote> get allQuotes => quoteRepository.getQuotes();
 
-  Future<Quote> getRandomQuote([Random? randomizer]) async {
-    List<Quote> quotes = await allQuotes;
+  Quote getRandomQuote([Random? randomizer]) {
+    int randomIndex = _getRandomIndex(randomizer, allQuotes.length);
 
-    int randomIndex = _getRandomIndex(randomizer, quotes.length);
-
-    return quotes[randomIndex];
+    return allQuotes[randomIndex];
   }
 
   int _getRandomIndex(Random? randomizer, int quoteListLength) {

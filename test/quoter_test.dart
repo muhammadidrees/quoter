@@ -16,8 +16,7 @@ void main() {
   Random _mockRandom = MockRandom();
 
   group("Quoter", () {
-    when(_mockQuoteRepository.getQuotes())
-        .thenAnswer((_) async => ktestQuoteData);
+    when(_mockQuoteRepository.getQuotes()).thenAnswer((_) => ktestQuoteData);
 
     test("uses 'QuoteLocalRepository' when not specified", () {
       expect(const Quoter().quoteRepository, isA<QuoteLocalRepository>());
@@ -26,7 +25,7 @@ void main() {
     test("returns a list of quotes on get allQuotes", () async {
       Quoter quoter = Quoter(quoteRepository: _mockQuoteRepository);
 
-      List<Quote> _quotes = await quoter.allQuotes;
+      List<Quote> _quotes = quoter.allQuotes;
 
       expect(_quotes, ktestQuoteData);
     });
@@ -36,13 +35,13 @@ void main() {
 
       when(_mockRandom.nextInt(ktestQuoteData.length)).thenReturn(0);
 
-      Quote firstQuote = await quoter.getRandomQuote(_mockRandom);
+      Quote firstQuote = quoter.getRandomQuote(_mockRandom);
 
-      expect(await quoter.getRandomQuote(_mockRandom), firstQuote);
+      expect(quoter.getRandomQuote(_mockRandom), firstQuote);
 
       when(_mockRandom.nextInt(ktestQuoteData.length)).thenReturn(1);
 
-      expect(await quoter.getRandomQuote(_mockRandom), isNot(firstQuote));
+      expect(quoter.getRandomQuote(_mockRandom), isNot(firstQuote));
     });
   });
 }
