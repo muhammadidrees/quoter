@@ -1,6 +1,6 @@
 import 'package:quoter/src/models/models.dart';
 
-const List<Map<String, dynamic>> ktestFileData = [
+const List<Map<String, dynamic>> ktestMapData = [
   {"quotation": "I am the Boss", "quotee": "Muhammad Idrees"},
   {"quotation": "My name is Hamza", "quotee": "Muhammad Hamza"}
 ];
