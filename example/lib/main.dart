@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quoter/quoter.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,26 +10,28 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Quoter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Quoter Demo'),
+      home: QuotePage(title: 'Quoter Demo'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+class QuotePage extends StatefulWidget {
+  const QuotePage({
+    Key? key,
+    required this.title,
+    this.quoter = const Quoter(),
+  }) : super(key: key);
 
   final String title;
+  final Quoter quoter;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<QuotePage> createState() => _QuotePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _QuotePageState extends State<QuotePage> {
   int _counter = 0;
 
   void _incrementCounter() {

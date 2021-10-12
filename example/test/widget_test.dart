@@ -6,15 +6,30 @@ import 'package:mockito/mockito.dart';
 import 'package:example/main.dart';
 import 'package:quoter/quoter.dart';
 
+import 'widget_test.mocks.dart';
+
 @GenerateMocks([Quoter])
 void main() {
+  MockQuoter mockQuoter = MockQuoter();
+  const Quote quote1 = Quote(quotation: "test", quotee: "Idrees");
+  const Quote quote2 = Quote(quotation: "test", quotee: "Idrees");
+
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(
+      MaterialApp(
+        home: QuotePage(
+          title: "My Page",
+          quoter: mockQuoter,
+        ),
+      ),
+    );
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);
     expect(find.text('1'), findsNothing);
+
+    when(const Quoter().getRandomQuote()).thenReturn(quote1);
 
     // Tap the '+' icon and trigger a frame.
     await tester.tap(find.byIcon(Icons.add));
