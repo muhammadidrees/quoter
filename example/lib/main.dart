@@ -51,8 +51,7 @@ class _QuotePageState extends State<QuotePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              _quote?.quotee ??
-                  'You have to push the button to generate random quote.',
+              _quote?.quotee ?? 'Tap the button to generate random quote.',
             ),
             Text(
               _quote?.quotation ?? "",

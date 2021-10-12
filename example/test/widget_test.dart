@@ -27,7 +27,7 @@ void main() {
     );
 
     expect(
-      find.text('You have to push the button to generate random quote.'),
+      find.text('Tap the button to generate random quote.'),
       findsOneWidget,
     );
     expect(find.text(''), findsOneWidget);
