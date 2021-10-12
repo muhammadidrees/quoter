@@ -32,11 +32,11 @@ class QuotePage extends StatefulWidget {
 }
 
 class _QuotePageState extends State<QuotePage> {
-  int _counter = 0;
+  Quote? _quote;
 
-  void _incrementCounter() {
+  void _generateRandomQuote() {
     setState(() {
-      _counter++;
+      _quote = widget.quoter.getRandomQuote();
     });
   }
 
@@ -50,19 +50,20 @@ class _QuotePageState extends State<QuotePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+            Text(
+              _quote?.quotee ??
+                  'You have to push the button to generate random quote.',
             ),
             Text(
-              '$_counter',
+              _quote?.quotation ?? "",
               style: Theme.of(context).textTheme.headline4,
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
+        onPressed: _generateRandomQuote,
+        tooltip: 'generate quote',
         child: const Icon(Icons.add),
       ),
     );

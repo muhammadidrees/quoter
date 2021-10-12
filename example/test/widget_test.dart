@@ -13,8 +13,9 @@ void main() {
   MockQuoter mockQuoter = MockQuoter();
   const Quote quote1 = Quote(quotation: "test", quotee: "Idrees");
   const Quote quote2 = Quote(quotation: "test", quotee: "Idrees");
+  const List<Quote> allQuotes = [quote1, quote2];
 
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+  testWidgets('Generate quote smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(
       MaterialApp(
@@ -25,18 +26,32 @@ void main() {
       ),
     );
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    expect(
+      find.text('You have to push the button to generate random quote.'),
+      findsOneWidget,
+    );
+    expect(find.text(''), findsOneWidget);
 
-    when(const Quoter().getRandomQuote()).thenReturn(quote1);
+    when(mockQuoter.allQuotes).thenReturn(allQuotes);
 
-    // Tap the '+' icon and trigger a frame.
+    when(mockQuoter.getRandomQuote()).thenReturn(quote1);
+
+    // Tap the button and trigger a frame.
     await tester.tap(find.byIcon(Icons.add));
     await tester.pump();
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    // Verify that app displays [quote1]
+    expect(find.text(quote1.quotation), findsOneWidget);
+    expect(find.text(quote1.quotee), findsOneWidget);
+
+    when(mockQuoter.getRandomQuote()).thenReturn(quote2);
+
+    // Tap the button and trigger a frame.
+    await tester.tap(find.byIcon(Icons.add));
+    await tester.pump();
+
+    // Verify that app displays [quote2]
+    expect(find.text(quote2.quotation), findsOneWidget);
+    expect(find.text(quote2.quotee), findsOneWidget);
   });
 }
