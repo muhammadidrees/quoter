@@ -42,7 +42,7 @@ List<Quote> getAllQuotes = quoter.getAllQuotes;
 
 Do you have a favorite quote? Contribute to this repo and share it with all of us. :smile:
 
-Read the [guide](https://github.com/muhammadidrees/quoter/CONTRIBUTING.md) for more details.
+Read the [guide](https://github.com/muhammadidrees/quoter/blob/master/CONTRIBUTING.md) for more details.
 
 ## Maintainers
 - [Muhammad Idrees](https://github.com/muhammadIdrees)
