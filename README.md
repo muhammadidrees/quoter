@@ -1,39 +1,46 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Quoter
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
-
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+A flutter pacakge that returns random quote from a community contributed quotation repository.
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Simply add `quoter` to the dependencies of the `pubspec.yaml`
 
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
-
-```dart
-const like = 'sample';
+```yaml
+dependencies:
+  quoter: <latest version>
 ```
 
-## Additional information
+## Usage
+The package return quote in the form of `Quote` model. A `Quote` consist of two string values.
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+```dart
+// the quote itself
+final String quotation;
+
+// the person with whom the quote is associated with
+final String quotee;
+```
+
+To use the package create instance of the `Quoter` class than use method `getRandomQuote()` to get a random quote.
+
+```dart
+Quoter quoter = Quoter();
+
+// gets a random quote
+Quote randomQuote = quoter.getRandomQuote();
+```
+
+All quotes can also be accessed using the getter `allQuotes`.
+
+```dart
+// gets list of all quotes
+List<Quote> allQuotes = quoter.allQuotes;
+```
+
+## Contribution
+
+Do you have a favorite quote? Contribute to this repo and share it with all of us. :smile:
+
+## Maintainers
+- [Muhammad Idrees](https://github.com/muhammadIdrees)
