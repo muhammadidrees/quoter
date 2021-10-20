@@ -2,6 +2,8 @@
 // in quoter/example/test/widget_test.dart.
 // Do not manually edit this file.
 
+// ignore_for_file: unnecessary_overrides
+
 import 'dart:math' as _i5;
 
 import 'package:mockito/mockito.dart' as _i1;
