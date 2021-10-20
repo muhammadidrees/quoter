@@ -57,7 +57,7 @@ git checkout -b <your_branch_name>
 ```
 
 
-**9.** Track your changes:heavy_check_mark: .
+**9.** Track your changes.
 
 ```
 git add . 
