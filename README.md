@@ -31,11 +31,11 @@ Quoter quoter = Quoter();
 Quote randomQuote = quoter.getRandomQuote();
 ```
 
-All quotes can also be accessed using the getter `allQuotes`.
+All quotes can also be accessed using the getter `getAllQuotes`.
 
 ```dart
 // gets list of all quotes
-List<Quote> allQuotes = quoter.allQuotes;
+List<Quote> getAllQuotes = quoter.getAllQuotes;
 ```
 
 ## Contribution

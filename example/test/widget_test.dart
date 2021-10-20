@@ -13,7 +13,7 @@ void main() {
   MockQuoter mockQuoter = MockQuoter();
   const Quote quote1 = Quote(quotation: "test", quotee: "Idrees");
   const Quote quote2 = Quote(quotation: "test", quotee: "Idrees");
-  const List<Quote> allQuotes = [quote1, quote2];
+  const List<Quote> getAllQuotes = [quote1, quote2];
 
   testWidgets('Generate quote smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
@@ -32,7 +32,7 @@ void main() {
     );
     expect(find.text(''), findsOneWidget);
 
-    when(mockQuoter.allQuotes).thenReturn(allQuotes);
+    when(mockQuoter.getAllQuotes).thenReturn(getAllQuotes);
 
     when(mockQuoter.getRandomQuote()).thenReturn(quote1);
 

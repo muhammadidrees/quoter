@@ -35,8 +35,8 @@ class MockQuoter extends _i1.Mock implements _i4.Quoter {
       (super.noSuchMethod(Invocation.getter(#quoteRepository),
           returnValue: _FakeQuoteRepository_0()) as _i2.QuoteRepository);
   @override
-  List<_i3.Quote> get allQuotes =>
-      (super.noSuchMethod(Invocation.getter(#allQuotes),
+  List<_i3.Quote> get getAllQuotes =>
+      (super.noSuchMethod(Invocation.getter(#getAllQuotes),
           returnValue: <_i3.Quote>[]) as List<_i3.Quote>);
   @override
   _i3.Quote getRandomQuote([_i5.Random? randomizer]) =>

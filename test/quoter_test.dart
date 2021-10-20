@@ -22,10 +22,10 @@ void main() {
       expect(const Quoter().quoteRepository, isA<QuoteLocalRepository>());
     });
 
-    test("returns a list of quotes on get allQuotes", () async {
+    test("returns a list of quotes on get getAllQuotes", () async {
       Quoter quoter = Quoter(quoteRepository: _mockQuoteRepository);
 
-      List<Quote> _quotes = quoter.allQuotes;
+      List<Quote> _quotes = quoter.getAllQuotes;
 
       expect(_quotes, ktestQuoteData);
     });

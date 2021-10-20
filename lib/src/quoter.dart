@@ -8,12 +8,12 @@ class Quoter {
 
   const Quoter({this.quoteRepository = const QuoteLocalRepository()});
 
-  List<Quote> get allQuotes => quoteRepository.getQuotes();
+  List<Quote> get getAllQuotes => quoteRepository.getQuotes();
 
   Quote getRandomQuote([Random? randomizer]) {
-    int randomIndex = _getRandomIndex(randomizer, allQuotes.length);
+    int randomIndex = _getRandomIndex(randomizer, getAllQuotes.length);
 
-    return allQuotes[randomIndex];
+    return getAllQuotes[randomIndex];
   }
 
   int _getRandomIndex(Random? randomizer, int quoteListLength) {
